@@ -1,0 +1,10 @@
+# Ignore everyting
+/*
+!.gitignore
+
+# Except for the files an folder we want to track
+!README.md
+!.bashrc
+!.config
+!.gtkrc-2.0
+!.xsession
