@@ -5,12 +5,14 @@ from settings.keys import mod, terminal, keys
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 # Icons: 
-# nf-fa-firefox, 
-# nf-fa-code, 
+# nf-fa-firefox,
+# nf-fae-python 
 # nf-oct-terminal, 
-# nf-mdi-folder_multiple, 
+# nf-dev-code_badge, 
+# nf-mdi-folder_multiple,
+# nf-mdi-settings 
 # nf-fae-layers
-groups = [Group(i) for i in [" ", " ", " ", " ", " "]]
+groups = [Group(i) for i in [" ", " ", " ", " "," ", "漣 "," "]]
 
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
