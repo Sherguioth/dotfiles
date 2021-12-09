@@ -4,3 +4,4 @@
 
 # Except for the files an folder we want to track
 !alacritty
+!qtile
