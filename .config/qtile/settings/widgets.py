@@ -31,6 +31,18 @@ def powerline(fg='light', bg='dark'):
     )
 
 
+def updates(fg='text', bg='dark'):
+    return widget.CheckUpdates(
+        **base(fg, bg), 
+        colour_have_updates=colors[fg],
+        colour_no_updates=colors[fg],
+        display_format='{updates}',
+        execute='alacritty', 
+        update_interval=1800, 
+        no_update_string='0'
+    )
+
+
 def workspaces():
     return [
         separator(),
@@ -72,14 +84,12 @@ widget_defaults = dict(
 
 extension_defaults = widget_defaults.copy()
 
-# TODO: Config updates widget
-# link: http://docs.qtile.org/en/latest/manual/ref/widgets.html#checkupdates
 primary_widgets = [
     *workspaces(),
     separator(),
     powerline('color4', 'dark'),
     icon(bg='color4', text=' '),
-    widget.CheckUpdates(**base(bg='color4', fg='text'), execute='alacritty', update_interval=1800, no_update_string='0'),
+    updates(bg='color4'),
     powerline('color3', 'color4'),
     icon(bg='color3', text=' '),
     widget.Net(**base(bg='color3'), interface='wlp5s0'),
