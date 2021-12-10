@@ -6,12 +6,10 @@
 [[ $- != *i* ]] && return
 
 
-alias ls='ls --color=auto'
-# alias ls='exa --group-directories-first'
+alias ls='exa --group-directories-first'
 alias grep='grep --color=auto'
-# alias cat='bat --style=plain --paging=never'
-alias tree='tree -C'
-# alias tree='exa -T'
+alias cat='bat --style=plain --paging=never'
+alias tree='exa -T'
 # alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
