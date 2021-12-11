@@ -10,7 +10,7 @@ alias ls='exa --group-directories-first'
 alias grep='grep --color=auto'
 alias cat='bat --style=plain --paging=never'
 alias tree='exa -T'
-# alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 . ~/.git-prompt.sh
