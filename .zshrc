@@ -1,11 +1,23 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Created by Sherguioth for 5.8
 
+
 # Themes
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-eval "$(starship init zsh)"
+
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# eval "$(starship init zsh)"
+
 
 # Plugins
+
 # curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -o ~/.sudo.plugin.zsh
 sudo=~/.sudo.plugin.zsh
 
@@ -42,6 +54,7 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 
+
 # History
 
 HISTSIZE=100000
@@ -67,6 +80,7 @@ zmodload zsh/complist
 autoload -Uz compinit
 compinit
 
+
 # Source plugins
 
 if [[ -f $sudo ]]; then
@@ -79,4 +93,5 @@ fi
 [[ -f $syntax ]] && source $syntax
 [[ -f $fzf ]] && source $fzf
 
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
