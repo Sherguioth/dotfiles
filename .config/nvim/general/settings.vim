@@ -5,7 +5,7 @@ set relativenumber
 " Activate selection mouse
 set mouse=a
 
-set numberwidth=4
+set numberwidth=1
 set clipboard=unnamedplus
 
 " Display options
