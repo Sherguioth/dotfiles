@@ -38,7 +38,7 @@ def updates(fg='text', bg='dark'):
         colour_no_updates=colors[fg],
         display_format='{updates}',
         execute='alacritty', 
-        update_interval=1800, 
+        update_interval=60, 
         no_update_string='0'
     )
 
