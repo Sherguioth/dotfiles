@@ -27,7 +27,7 @@
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
   - [Apps](#apps-1)
 
-## Overview 
+## Overview
 
 This is a guide on how to install and use my linux configurations, based on a clean Arch Linux installation. Here a twilight window manager Qtile will be used, which is the one I have initially configured. These configurations are mostly based on this repository of **[here](https://github.com/antoniosarosi/dotfiles)**, owned by **[Antonio Sarosi](https://github.com/antoniosarosi)**.
 
@@ -101,12 +101,13 @@ nmcli device wifi connect YOUR_SSID password YOUR_PASSWORD
 ```
 
 Check [this page](https://wiki.archlinux.org/index.php/NetworkManager#nmcli_examples)
-for other options provided by *nmcli*. The last thing we need to do before
+for other options provided by _nmcli_. The last thing we need to do before
 thinking about desktop environments is installing **[Xorg](https://wiki.archlinux.org/index.php/Xorg)**:
 
 ```bash
 sudo pacman -S xorg
 ```
+
 ## Login and window manager
 
 First, we need to be able to login and open some programs like a browser and a
@@ -126,15 +127,15 @@ we need a browser.
 sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox-developer-edition
 ```
 
-Enable *lightdm* service and restart your computer, you should be able to log into
-Qtile through *lightdm*.
+Enable _lightdm_ service and restart your computer, you should be able to log into
+Qtile through _lightdm_.
 
 ```bash
 sudo systemctl enable lightdm
 reboot
 ```
 
-If after reboot dosen't show the *lightdm* login check with nano or vim the next line, uncommet it and *reboot*.
+If after reboot dosen't show the _lightdm_ login check with nano or vim the next line, uncommet it and _reboot_.
 
 ```bash
 # /etc/lightdm/lightdm.conf
@@ -144,22 +145,23 @@ If after reboot dosen't show the *lightdm* login check with nano or vim the next
 #ligind-check-graphicl=true
 ...
 ```
+
 ## Basic Qtile configuration
 
 Now that you're in Qtile, you should know some of the default keybindings.
 
-| **Key**                | **Action**                 |
-| ---------------------- | -------------------------- |
-| **mod + return**       | launch terminal            |
-| **mod + k**            | next window                |
-| **mod + j**            | previous window            |
-| **mod + w**            | kill window                |
-| **mod + [123456789]**  | go to workspace [123456789]|
-| **mod + ctrl + r**     | restart Qtile              |
-| **mod + ctrl + q**     | logout                     |
+| **Key**               | **Action**                  |
+| --------------------- | --------------------------- |
+| **mod + return**      | launch terminal             |
+| **mod + k**           | next window                 |
+| **mod + j**           | previous window             |
+| **mod + w**           | kill window                 |
+| **mod + [123456789]** | go to workspace [123456789] |
+| **mod + ctrl + r**    | restart Qtile               |
+| **mod + ctrl + q**    | logout                      |
 
 Before doing anything else, if you don't have a US keyboard, you should
-change it using *setxkbmap*. To open xterm use **mod + return**. For example to
+change it using _setxkbmap_. To open xterm use **mod + return**. For example to
 change your layout to latam:
 
 ```bash
@@ -181,7 +183,7 @@ Now open the config file:
 code ~/.config/qtile/config.py
 ```
 
-At the beginning, after imports, you should find an array called *keys*,
+At the beginning, after imports, you should find an array called _keys_,
 and it contains the following line:
 
 ```python
@@ -233,7 +235,7 @@ that.
 ### Wallpaper
 
 First things first, your screen looks empty and black, so you might want to have
-a wallpaper not to feel so depressed. You can open *firefox* through *rofi*
+a wallpaper not to feel so depressed. You can open _firefox_ through _rofi_
 using **mod + m** and download one. Then install
 **[feh](https://wiki.archlinux.org/index.php/Feh)** or
 **[nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)**
@@ -257,7 +259,8 @@ To list all available fonts:
 ```bash
 fc-list
 ```
-Personally, I really like the fonts Agave Nerd Font, JetBrains Mono and UbuntuMono Nerd Font. Installing these fonts is very easy, you just have to download the zip file of the fonts you want from [Nerd Fonts](https://www.nerdfonts.com/font-downloads), unzip the zip file with the fonts and copy the folder with the fonts in */usr/share/fonts*
+
+Personally, I really like the fonts Agave Nerd Font, JetBrains Mono and UbuntuMono Nerd Font. Installing these fonts is very easy, you just have to download the zip file of the fonts you want from [Nerd Fonts](https://www.nerdfonts.com/font-downloads), unzip the zip file with the fonts and copy the folder with the fonts in _/usr/share/fonts_
 
 ```bash
 cd Downloads
@@ -267,7 +270,8 @@ unzip JetBrainsMono.zip -d Jet JetBrainsMono
 sudo cp JetBrainsMono/ /usr/share/fonts
 sudo cp Agave/ /usr/share/fonts
 ```
-And now you can delete the zip files. To install Ubuntu Mono Nerd Font you can use an AUR helper, in [this section](#aur-helper) you can know how to install one. 
+
+And now you can delete the zip files. To install Ubuntu Mono Nerd Font you can use an AUR helper, in [this section](#aur-helper) you can know how to install one.
 
 ### Audio
 
@@ -284,7 +288,7 @@ sudo pacman -S pulseaudio pavucontrol
 On Arch,
 [pulseaudio is enabled by default](https://wiki.archlinux.org/index.php/PulseAudio#Running),
 but you might need to reboot in order for it to actually start. After rebooting,
-you can open *pavucontrol* through *rofi*, unmute the audio, and you should be
+you can open _pavucontrol_ through _rofi_, unmute the audio, and you should be
 just fine.
 
 ### Monitors
@@ -308,20 +312,20 @@ and stuff you need a GUI like
 sudo pacman -S arandr
 ```
 
-Open it with *rofi*, arrange your screens however you want, and then you can
+Open it with _rofi_, arrange your screens however you want, and then you can
 save that layout, which will basically give you a shell script with the exact
-*xrandr* command that you need. Save that script, but don't click "apply" just
+_xrandr_ command that you need. Save that script, but don't click "apply" just
 yet.
 
 For a multi-monitor system, it's recommended to create an instance of a
-*Screen* object for each monitor in your Qtile config.
+_Screen_ object for each monitor in your Qtile config.
 
-You'll find an array called *screens* which contains only one object
+You'll find an array called _screens_ which contains only one object
 initialized with a bar at the bottom. Inside that bar you can see the default
 widgets that come with it.
 
 Add as many screens as you have and copy-paste all widgets, later you can
-customize them. Now you can go back to arandr, click *apply*, and then restart
+customize them. Now you can go back to arandr, click _apply_, and then restart
 Qtile.
 
 Now your multi-monitor system should work.
@@ -331,7 +335,7 @@ Now your multi-monitor system should work.
 Another basic utility you might need is automounting external hard drives or
 USBs. For that I use **[udisks](https://wiki.archlinux.org/index.php/Udisks)**
 and **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**.
-*udisks* is a dependency of *udiskie*, so we only need to install the last one.
+_udisks_ is a dependency of _udiskie_, so we only need to install the last one.
 Install also **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**
 package to read and write NTFS formatted drives:
 
@@ -341,7 +345,7 @@ sudo pacman -S udiskie ntfs-3g
 
 ## Network
 
-We have configured the network through *nmcli*, but a graphical frontend is
+We have configured the network through _nmcli_, but a graphical frontend is
 more friendly. I use
 **[nm-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**:
 
@@ -373,13 +377,13 @@ volumeicon &
 
 So far, some of the settings that have been made are not permanent, which means that when you restart the computer they will not be. To solve this, it is necessary to create an .xsesion file that loads all these configurations at the beginning of the session.
 
-Now you can use *~/.xsesion* to run some configurations and programs before your window manager starts:
+Now you can use _~/.xsesion_ to run some configurations and programs before your window manager starts:
 
 ```bash
 touch ~/.xsesion
 ```
 
-For example, if you place this in *~.xsesion*:
+For example, if you place this in _~.xsesion_:
 
 ```bash
 # Internet
@@ -394,13 +398,14 @@ picom &
 # Automount Devices
 udiskie -t &
 
-# Wallpaper 
+# Wallpaper
 feh --bg-scale YOUR_WALLPAPER
 ```
 
-I recommend that you copy in this file the other configs that be in my [*.xsesion* file](https://github.com/Sherguioth/dotfiles/blob/main/.xsession). Every time you login you will have all systray utilities, your keyboard layout and the other configs ready.
+I recommend that you copy in this file the other configs that be in my [_.xsesion_ file](https://github.com/Sherguioth/dotfiles/blob/main/.xsession). Every time you login you will have all systray utilities, your keyboard layout and the other configs ready.
 
 ## Other configuration and tools
+
 ### AUR helper
 
 Now that you have some software that allows you tu use your computer without
@@ -417,7 +422,7 @@ cd yay-git
 makepkg -si
 ```
 
-With an *Arch User Repository helper*, you can basically install
+With an _Arch User Repository helper_, you can basically install
 any piece of software on this planet that was meant to run on Linux.
 
 ### File Manager
@@ -437,12 +442,12 @@ sudo pacman -S thunar ranger
 ### GTK Theming
 
 The moment you have been wating for has arrived, you are finally going to
-install a dark theme. I use *Material Black Colors*, so go grab a flavor
+install a dark theme. I use _Material Black Colors_, so go grab a flavor
 [here](https://www.gnome-look.org/p/1316887/) and the matching icons
 [here](https://www.pling.com/p/1333360/).
 
 I suggest starting with
-*Material-Black-Blueberry* and *Material-Black-Blueberry-Suru*. You can find
+_Material-Black-Blueberry_ and _Material-Black-Blueberry-Suru_. You can find
 other GTK themes [on this page](https://www.gnome-look.org/browse/cat/135/).
 Once you have your theme folders downloaded, this is what you do:
 
@@ -529,10 +534,10 @@ picom &
 
 ### Lightdm theming
 
-We can also change the theme of *lightdm* and make it look cooler, because why
+We can also change the theme of _lightdm_ and make it look cooler, because why
 not? We need another greeter, and some theme, namely
 **[lightdm-webkit2-greeter](https://www.archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/)**
-and  **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
+and **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
 
 ```bash
 sudo pacman -S lightdm-webkit2-greeter
@@ -564,12 +569,13 @@ There are dozens of programs for multimedia stuff, check
 #### Video and audio
 
 No doubt
-[vlc](https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol))
+[vlc](<https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol)>)
 is exactly what you need:
 
 ```bash
 sudo pacman -S vlc
 ```
+
 ## Apps
 
 | Key                 | Action                        |
@@ -587,16 +593,16 @@ sudo pacman -S vlc
 
 ### Basic utilities
 
-| Software                                                                                            | Utility                          |
-| --------------------------------------------------------------------------------------------------- | -------------------------------- |
-| **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                           | Self explanatory                 |
-| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | *NetworkManager* systray         |
-| **[pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)**                                   | Self explanatory                 |
-| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | *pulseaudio* GUI                 |
-| **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                            | Automounter                      |
-| **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**                                         | NTFS read & write                |
-| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI for *xrandr*                 |
-| **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Volume systray                   |
+| Software                                                                                    | Utility                  |
+| ------------------------------------------------------------------------------------------- | ------------------------ |
+| **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                   | Self explanatory         |
+| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)** | _NetworkManager_ systray |
+| **[pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)**                           | Self explanatory         |
+| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**             | _pulseaudio_ GUI         |
+| **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                    | Automounter              |
+| **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**                                 | NTFS read & write        |
+| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                      | GUI for _xrandr_         |
+| **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**           | Volume systray           |
 
 ### Fonts, theming and GTK
 
@@ -621,3 +627,4 @@ sudo pacman -S vlc
 | **[rofi](https://wiki.archlinux.org/index.php/Rofi)**                 | Menu and window switcher |
 | **[scrot](https://wiki.archlinux.org/index.php/Screen_capture)**      | Screenshot               |
 | **[trayer](https://www.archlinux.org/packages/extra/x86_64/trayer/)** | Systray                  |
+| **[nvm](https://github.com/nvm-sh/nvm)**                              | Node Verson Manager      |
