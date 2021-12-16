@@ -23,8 +23,10 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'} " Ranger
 Plug 'jiangmiao/auto-pairs'    " Auto close brackets
 Plug 'tpope/vim-commentary'    " Easy commentaries
 Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier', {'do': 'yarn install'}
 
 " Git ----------------------------------
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 call plug#end()

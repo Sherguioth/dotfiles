@@ -14,6 +14,7 @@ nmap <Leader>x :!node %<CR>
 
 nmap <TAB> :bnext<CR>
 nmap <S-TAB> :bprevious<CR>
+nmap <C-d> :bd<CR>
 
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
