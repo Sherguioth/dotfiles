@@ -9,4 +9,9 @@ sudo pacman -S nodejs npm python python python-pip ruby rubygems
 pip install neovim
 gem install neovim
 sudo npm i -g neovim
+
+# Some other dependencies
+sudo pacman -S xsel fzf ripgrep fd the_silver_searcher prettier
 ```
+
+Then execute :PlugInstall inside neovim.

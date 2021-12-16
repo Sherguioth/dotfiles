@@ -6,7 +6,7 @@ set relativenumber
 set mouse=a
 
 set numberwidth=1
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Display options
 set showmode
@@ -38,3 +38,4 @@ set splitbelow
 filetype on
 filetype indent on
 filetype plugin on
+
