@@ -15,6 +15,7 @@ source $HOME/.config/nvim/plugins-config/fzf.vim
 source $HOME/.config/nvim/plugins-config/indentLine.vim
 source $HOME/.config/nvim/plugins-config/prettier.vim
 source $HOME/.config/nvim/plugins-config/signify.vim
+luafile $HOME/.config/nvim/plugins-config/treesitter.lua
 
 " Themes
 source $HOME/.config/nvim/themes/airline.vim

@@ -12,8 +12,8 @@ nmap <Leader>; $a;<Esc>
 nmap <Leader>rp :let @*=expand("%")<CR>
 nmap <Leader>x :!node %<CR>
 
-nmap <TAB> :bnext<CR>
-nmap <S-TAB> :bprevious<CR>
+nmap <Leader><TAB> :bnext<CR>
+nmap <Leader><S-TAB> :bprevious<CR>
 nmap <C-d> :bd<CR>
 
 xnoremap K :move '<-2<CR>gv-gv

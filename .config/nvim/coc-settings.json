@@ -2,5 +2,24 @@
 	"explorer.icon.enableVimDevicons": true,
 	"python.jediEnabled": true,
 	"python.linting.enabled": true,
-	"python.linting.pylintEnabled": true
+	"python.linting.pylintEnabled": true,
+	"java.home": "/usr/lib/jvm/java-11-jdk",
+	"codeLens.enable": true,
+	"java.referencesCodeLens.enabled": true,
+	"java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-1.8",
+			"path": "/usr/lib/jvm/java-8-jdk"
+		},
+		{
+			"name": "JavaSE-11",
+			"path": "/usr/lib/jvm/java-11-jdk",
+			"default": true
+		},
+		{
+			"name": "JavaSE-17",
+			"path": "/usr/lib/jvm/java-17-jdk"
+		}
+	]
 }

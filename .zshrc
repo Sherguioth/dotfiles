@@ -39,7 +39,7 @@ alias cat='bat --style=plain --paging=never'
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
-
+alias ll='ls -la'
 
 # Colors
 
@@ -112,7 +112,7 @@ else
         export PATH="/home/sherguioth/anaconda3/bin:$PATH"
     fi
 fi
-
 unset __conda_setup
-# <<< conda initialize <<<
 
+conda deactivate
+# <<< conda initialize <<<

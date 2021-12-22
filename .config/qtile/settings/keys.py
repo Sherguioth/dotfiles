@@ -48,6 +48,9 @@ keys = [
 
     # Screnshot
     Key([mod], "s", lazy.spawn("scrot")),
+    
+    # Text editor
+    Key([mod], "t", lazy.spawn("code")),
 
 
     # Volume from laptop

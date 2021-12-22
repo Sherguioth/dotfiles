@@ -4,7 +4,7 @@ To use all plugins and configs we need install some dependencies
 
 ```bash
 # Install only those you don't have
-sudo pacman -S nodejs npm python python python-pip ruby rubygems
+sudo pacman -S nodejs npm python python python-pip ruby rubygems lua
 
 pip install neovim jedi pylint
 gem install neovim

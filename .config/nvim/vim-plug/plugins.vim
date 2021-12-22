@@ -18,6 +18,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'
 Plug 'Yggdroot/indentLine'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'} " Ranger
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Typing -------------------------------
 Plug 'jiangmiao/auto-pairs'    " Auto close brackets
