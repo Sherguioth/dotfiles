@@ -42,7 +42,7 @@ nm-applet &
 picom &
 
 # Keyboard layout
-setxkbmap latam &
+setxkbmap es &
 
 # Automount Devices
 udiskie -t &
